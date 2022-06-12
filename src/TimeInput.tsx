@@ -11,7 +11,7 @@ type TimeInputProps = {
 export function TimeInput({onStart}: TimeInputProps) {
     const [time, setTime] = useState("25:00")
     const [timeValid, setTimeValid] = useState(true)
-    const timeRegex = /(\d{2}):(\d{2})/
+    const timeRegex = /(\d{1,2}):(\d{2})/
 
     const start = () => {
         const match = timeRegex.exec(time)

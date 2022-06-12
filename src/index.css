@@ -62,3 +62,19 @@ body {
     font-size: 1.1em;
     cursor: pointer;
 }
+
+/***************************************
+                Buttons
+ ***************************************/
+
+.btn {
+    background: transparent;
+    color: var(--primary-text);
+    border: 1px solid var(--primary-text);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.font-bigger {
+    font-size: 1.1em;
+}

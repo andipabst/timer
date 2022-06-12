@@ -19,7 +19,9 @@ export function Countdown({until, onFinished, onReset}: CountdownProps) {
     const reset = () => onReset()
 
     return <div>
-        {format}
-        <button onClick={reset}>reset</button>
+        <p>
+            {format}
+        </p>
+        <button class='btn' onClick={reset}>reset</button>
     </div>
 }
