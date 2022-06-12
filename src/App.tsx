@@ -28,11 +28,26 @@ export function App() {
     const [state, setState] = useState(targetDate === 0 ? State.Initial : State.Running);
 
     const start = (duration: number) => {
+        Notification.requestPermission().then(result => {
+            if (result === "granted") {
+                console.log("notification permission granted")
+            } else {
+                // TODO show error in UI
+                console.error("notification permission: " + result)
+            }
+        })
+
         setTargetDate(Date.now() + duration)
         setState(State.Running)
     }
 
-    const finished = () => setState(State.Finished)
+    const finished = () => {
+        setState(State.Finished)
+
+        new Notification("Timer finished", {
+            icon: '/icon.svg'
+        })
+    }
 
     const reset = () => {
         setTargetDate(0)
